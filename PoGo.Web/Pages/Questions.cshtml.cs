@@ -1,11 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using PoGo.Web.Logic;
 using PoGo.Web.Dto;
+using PoGo.Web.Logic;
+using System.Collections.Generic;
 
 namespace PoGo.Web.Pages
 {
@@ -25,9 +21,5 @@ namespace PoGo.Web.Pages
             //Questions = LoadDummyQuestions();
             Questions = faqFeed.Questions;
         }
-
-        IEnumerable<Question> LoadDummyQuestions() =>
-            Enumerable.Range(0, 10)
-            .Select(i => new Question { Title = $"Stupid question#{i}", Answer = $"Answer#{i}" });
     }
 }

@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Primitives;
 using Newtonsoft.Json;
 using PoGo.Web.Dto;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace PoGo.Web.Logic
 {
@@ -41,5 +41,9 @@ namespace PoGo.Web.Logic
             var content = File.ReadAllText(faqFileName);
             return JsonConvert.DeserializeObject<IList<Question>>(content);
         }
+
+        IEnumerable<Question> LoadDummyQuestions() =>
+            Enumerable.Range(0, 10)
+            .Select(i => new Question { Title = $"Stupid question#{i}", Answer = $"Answer#{i}" });
     }
 }

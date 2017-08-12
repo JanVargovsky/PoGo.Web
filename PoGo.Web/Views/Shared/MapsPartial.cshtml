@@ -1,0 +1,13 @@
+﻿@model IList<PoGo.Web.Dto.MapInfo>
+
+<div class="row" id="maps">
+    @foreach (var map in Model)
+    {
+        <div class="col-md-4">
+            <h2 class="text-center">@map.City</h2>
+            <a href="#">
+                <img class="img img-fluid" alt="@map.City" src="@map.Image" />
+            </a>
+        </div>
+    }
+</div>

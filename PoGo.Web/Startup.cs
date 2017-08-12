@@ -38,6 +38,7 @@ namespace PoGo.Web
 
             services.AddSingleton<CarouselFeed>();
             services.AddSingleton<FAQFeed>();
+            services.AddSingleton<MapFeed>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,29 +1,8 @@
 ﻿@page
 @model IndexModel
-@inject Logic.CarouselFeed CarouselFeed
 @{
     ViewData["Title"] = "Index";
 }
 
-@Html.Partial("Carousel", new CarouselModel(CarouselFeed.Images))
-
-<div class="row" id="maps">
-    <div class="col-md-4">
-        <h2 class="text-center">Praha</h2>
-        <a href="#">
-            <img class="img img-fluid" alt="Praha" src="~/images/maps/praha.png" />
-        </a>
-    </div>
-    <div class="col-md-4">
-        <h2 class="text-center">Frýdek - Místek</h2>
-        <a href="#">
-            <img class="img img-fluid" alt="Frýdek - Místek" src="~/images/maps/fm.png" />
-        </a>
-    </div>
-    <div class="col-md-4">
-        <h2 class="text-center">Frýdlant nad Ostravicí</h2>
-        <a href="#">
-            <img class="img img-fluid" alt="Frýdlant nad Ostravicí" src="~/images/maps/fno.png" />
-        </a>
-    </div>
-</div>
+@Html.Partial("CarouselPartial", Model.Images)
+@Html.Partial("MapsPartial", Model.Maps)

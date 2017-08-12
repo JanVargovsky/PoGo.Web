@@ -21,13 +21,11 @@
 </head>
 <body>
     @Html.Partial("Navigation")
-    
     <main class="container body-content">
         @RenderBody()
     </main>
-
     @Html.Partial("Footer")
-    
+
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/popper.js/dist/umd/popper.js"></script>
