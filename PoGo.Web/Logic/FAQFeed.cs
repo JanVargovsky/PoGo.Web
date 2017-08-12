@@ -10,7 +10,7 @@ namespace PoGo.Web.Logic
 {
     public class FAQFeed
     {
-        const string FAQFileName = @"Configuration\faq.json";
+        const string FAQFileName = "Configuration/faq.json";
         private readonly IHostingEnvironment hostingEnvironment;
         private readonly ILogger<FAQFeed> logger;
 
