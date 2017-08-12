@@ -5,4 +5,4 @@ $outputZip = $PSScriptRoot + "\PoGoWeb_" + $date + ".zip";
 Write-Debug $inputFolder
 Write-Debug $outputZip
 [System.IO.Compression.ZipFile]::CreateFromDirectory($inputFolder, $outputZip) ;
-Write-Host $outputZip + " created";
+Write-Host $outputZip " created";
