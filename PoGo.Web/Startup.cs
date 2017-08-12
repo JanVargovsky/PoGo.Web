@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Razor.Language;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
+using Microsoft.Extensions.Logging;
 using PoGo.Web.Logic;
 using System.IO;
 
@@ -24,6 +25,8 @@ namespace PoGo.Web
         {
             services.AddMvc();
 
+            services.AddLogging();
+
             services.AddSingleton<IFileProvider>(new PhysicalFileProvider(Directory.GetCurrentDirectory()));
 
             // workaround for IFileProvider
@@ -38,7 +41,7 @@ namespace PoGo.Web
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {

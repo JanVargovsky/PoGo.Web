@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Primitives;
 using Newtonsoft.Json;
 using PoGo.Web.Dto;
 using System.Collections.Generic;
@@ -10,12 +12,14 @@ namespace PoGo.Web.Logic
     {
         const string FAQFileName = @"Configuration\faq.json";
         private readonly IHostingEnvironment hostingEnvironment;
+        private readonly ILogger<FAQFeed> logger;
 
         public IList<Question> Questions { get; set; }
 
-        public FAQFeed(IHostingEnvironment hostingEnvironment)
+        public FAQFeed(IHostingEnvironment hostingEnvironment, ILogger<FAQFeed> logger)
         {
             this.hostingEnvironment = hostingEnvironment;
+            this.logger = logger;
             Questions = GetQuestions();
             RegisterRefresh();
         }
@@ -24,10 +28,11 @@ namespace PoGo.Web.Logic
         {
             var token = hostingEnvironment.ContentRootFileProvider.Watch(FAQFileName);
             token.RegisterChangeCallback(state =>
-            {
-                Questions = GetQuestions();
-                RegisterRefresh();
-            }, null);
+             {
+                 logger.LogInformation($"{FAQFileName} changed loading new questions");
+                 Questions = GetQuestions();
+                 RegisterRefresh();
+             }, null);
         }
 
         IList<Question> GetQuestions()

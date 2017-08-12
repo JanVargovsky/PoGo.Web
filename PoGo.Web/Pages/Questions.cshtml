@@ -1,18 +1,19 @@
 ﻿@page
 @model QuestionsModel
 @{
+    ViewData["Title"] = "FAQ";
 }
 
 <h1>Nejčastější otázky a odpovědi</h1>
 
 @foreach (var question in Model.Questions)
 {
-    <div class="card mb-3">
+    <div class="card border-info mb-3 pb-2">
         <h4 class="card-title p-2 bg-info">@question.Title</h4>
-        <p class="card-text p-2">@question.Answer</p>
+        <p class="card-text px-2 m-0">@question.Answer</p>
         @if (question.Images?.Any() == true)
         {
-            <p class="p-2">
+            <p class="px-2">
                 @foreach (var image in question.Images)
                 {
                     <img src="images/@image" class="img-thumbnail float-left m-1"/>

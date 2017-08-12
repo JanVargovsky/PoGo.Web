@@ -2,7 +2,7 @@
 @model IndexModel
 @inject Logic.CarouselFeed CarouselFeed
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Index";
 }
 
 @Html.Partial("Carousel", new CarouselModel(CarouselFeed.Images))
