@@ -1,6 +1,12 @@
-﻿body {
-  padding-top: 50px;
-  padding-bottom: 20px;
+﻿footer {
+  min-height: 30px;
+}
+body main {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+body main #maps {
+  padding-top: 20px;
 }
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */

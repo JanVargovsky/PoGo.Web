@@ -7,12 +7,17 @@
 
 @foreach (var question in Model.Questions)
 {
-    <div class="panel panel-info">
-        <div class="panel-heading">
-            @question.Title
-        </div>
-        <div class="panel-body">
-            @question.Answer
-        </div>
+    <div class="card mb-3">
+        <h4 class="card-title p-2 bg-info">@question.Title</h4>
+        <p class="card-text p-2">@question.Answer</p>
+        @if (question.Images?.Any() == true)
+        {
+            <p>
+                @foreach (var image in question.Images)
+                {
+                    <img src="images/@image" class="img-thumbnail float-left"/>
+                }
+            </p>
+        }
     </div>
 }

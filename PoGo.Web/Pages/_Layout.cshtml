@@ -15,48 +15,17 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/StyleSheet.min.css" asp-append-version="true" />
     </environment>
+    <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://d1azc1qln24ryf.cloudfront.net/114779/Socicon/style-cf.css?rd5re8">
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-page="/Index" class="navbar-brand"><img src="~/images/logo.png" alt="logo" /> Nagas.cz</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="https://discord.gg/pbZgX97" target="_blank">
-                            <span class="socicon-discord"></span>
-                            Discord - hlášení pokémonů
-                        </a>
-                    </li>
-                    <li><a asp-page="/Questions"><span class="glyphicon glyphicon-question-sign"></span> FAQ</a></li>
-                    <li>
-                        <a href="https://www.paypal.me/nagaspogo" target="_blank">
-                            <span class="glyphicon glyphicon-euro"></span>
-                            Podporte web
-                        </a>
-                    </li>
-                    <li><a asp-page="/AboutProject"><span class="glyphicon glyphicon-tags"></span> O projektu</a></li>
-                    
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="container body-content">
+    @Html.Partial("Navigation")
+    
+    <main class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2017 - PoGo.Web</p>
-        </footer>
-    </div>
+    </main>
+
+    @Html.Partial("Footer")
 
     <script src="~/lib/popper.js/dist/umd/popper.js"></script>
     <environment include="Development">

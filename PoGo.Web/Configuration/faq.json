@@ -1,0 +1,28 @@
+﻿[
+  {
+    "Title": "Jak mohu podpořit web?",
+    "Answer": "Na stránce nagas.cz naleznete nahoře v menu odkaz, kde můžete přispět pomocí PayPall. Jestli vám PayPall nevyhovuje, tak mě kontaktujte na Discordu a vždy se nějak domluvíme. Také ocením hash klíče a samozřejmě vlídné slovo na Discordu",
+    "Images": [ "logo.png" ]
+  },
+  {
+    "Title": "Můžeš rozšířit mapu na lokaci kde nescanuješ např. jiné město?",
+    "Answer": "Ano, mohu. Záleží ale na domluvě. Kontaktujte mě na Discordu"
+  },
+  {
+    "Title": "Kde se mohu zeptat na jakoukoliv otázku týkající se mapy?",
+    "Answer": "Chtěl bych udržet jednotný kanál komunikace, takže všechny dotazy směřujte na Discord.",
+    "Images": [
+      "maps/fm.png",
+      "maps/praha.png"
+    ]
+  },
+  {
+    "Title": "Jak si mohu na mapě zobrazit pouze pokémony, ktere chci?",
+    "Answer": "Na mapě v menu \"Options\" zvolte, že chcete vidět pokemony viz obrázek. Dále do seznamu \"Hide\" přidejte všechny pokémony, ktere nechcete vidět. ",
+    "Images": [
+      "maps/fm.png",
+      "maps/praha.png",
+      "maps/fno.png"
+    ]
+  }
+]

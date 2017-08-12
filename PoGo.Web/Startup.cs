@@ -8,6 +8,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using PoGo.Web.Logic;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
+using Microsoft.AspNetCore.Razor.Language;
+using Microsoft.AspNetCore.Mvc.Razor.Internal;
 
 namespace PoGo.Web
 {
@@ -24,6 +29,18 @@ namespace PoGo.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            services.AddSingleton<IFileProvider>(new PhysicalFileProvider(Directory.GetCurrentDirectory()));
+
+            // workaround for IFileProvider
+            // https://github.com/aspnet/Mvc/issues/6479
+            services.AddSingleton<RazorProject>(s =>
+            {
+                return new FileProviderRazorProject(s.GetRequiredService<IRazorViewEngineFileProviderAccessor>());
+            });
+
+            services.AddSingleton<CarouselFeed>();
+            services.AddSingleton<FAQFeed>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
