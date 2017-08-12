@@ -1,0 +1,18 @@
+﻿@page
+@model QuestionsModel
+@{
+}
+
+<h1>Nejčastější otázky a odpovědi</h1>
+
+@foreach (var question in Model.Questions)
+{
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            @question.Title
+        </div>
+        <div class="panel-body">
+            @question.Answer
+        </div>
+    </div>
+}
