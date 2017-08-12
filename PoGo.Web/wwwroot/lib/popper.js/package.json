@@ -1,46 +1,107 @@
 {
-  "name": "popperjs-monorepo",
-  "version": "0.0.0",
-  "license": "MIT",
+  "_args": [
+    [
+      "popper.js@1.11.1",
+      "D:\\Programming\\DotNetCore\\PoGo\\PoGo.Web"
+    ]
+  ],
+  "_from": "popper.js@1.11.1",
+  "_id": "popper.js@1.11.1",
+  "_inCache": true,
+  "_location": "/popper.js",
+  "_nodeVersion": "8.1.2",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/popper.js-1.11.1.tgz_1501420825817_0.8391906942706555"
+  },
+  "_npmUser": {
+    "email": "federico.zivolo@gmail.com",
+    "name": "fezvrasta"
+  },
+  "_npmVersion": "5.3.0",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "popper.js",
+    "raw": "popper.js@1.11.1",
+    "rawSpec": "1.11.1",
+    "scope": null,
+    "spec": "1.11.1",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/popper.js/-/popper.js-1.11.1.tgz",
+  "_shasum": "f5aca9a73bca1ce1fdbd9be8b1ba68677cbdd8e0",
+  "_shrinkwrap": null,
+  "_spec": "popper.js@1.11.1",
+  "_where": "D:\\Programming\\DotNetCore\\PoGo\\PoGo.Web",
+  "author": {
+    "email": "federico.zivolo@gmail.com",
+    "name": "Federico Zivolo"
+  },
+  "bugs": {
+    "url": "https://github.com/FezVrasta/popper.js/issues"
+  },
+  "contributors": [
+    {
+      "name": "Contributors",
+      "url": "https://github.com/FezVrasta/popper.js/graphs/contributors"
+    }
+  ],
+  "dependencies": {},
+  "description": "A kickass library to manage your poppers",
   "devDependencies": {
-    "async": "^2.5.0",
-    "babel-eslint": "^7.2.3",
-    "bundlesize": "^0.12.1",
-    "eslint-plugin-jasmine": "^2.7.1",
-    "jsdoc-to-markdown": "^3.0.0",
-    "lerna": "^2.0.0",
-    "lint-staged": "^4.0.1",
-    "opt-cli": "^1.5.1",
-    "pre-commit": "^1.2.2",
-    "prettier-eslint-cli": "^4.1.1",
-    "wait-on": "^2.0.2",
-    "wide-align": "^1.1.2"
+    "@popperjs/bundle": "^1.0.0",
+    "@popperjs/eslint-config-popper": "^1.0.0",
+    "@popperjs/test": "^1.0.0",
+    "@popperjs/test-utils": "^1.0.0",
+    "eslint": "^4.1.1",
+    "nuget-publish": "^1.0.0"
+  },
+  "directories": {},
+  "dist": {
+    "integrity": "sha512-wwp6RVokzjO4qh86qFeTw/zEw8y0uqB1U82LWTUExBDq8EJx/8svxDXVQB2jxTjRX+J+S++tQkbWnbOuOykZFw==",
+    "shasum": "f5aca9a73bca1ce1fdbd9be8b1ba68677cbdd8e0",
+    "tarball": "https://registry.npmjs.org/popper.js/-/popper.js-1.11.1.tgz"
+  },
+  "homepage": "https://popper.js.org",
+  "installable": true,
+  "keywords": [
+    "attached",
+    "component",
+    "drop",
+    "popover",
+    "popperjs",
+    "position",
+    "tooltip"
+  ],
+  "license": "MIT",
+  "main": "dist/umd/popper.js",
+  "maintainers": [
+    {
+      "name": "fezvrasta",
+      "email": "info@mywebexpression.com"
+    }
+  ],
+  "module": "dist/esm/popper.js",
+  "name": "popper.js",
+  "optionalDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FezVrasta/popper.js.git"
   },
   "scripts": {
-    "precommit": "lint-staged",
-    "postinstall": "lerna bootstrap",
-    "bootstrap": "lerna bootstrap",
-    "pretest": "$BUNDLESIZE && bundlesize-init",
-    "test": "lerna run --parallel test && yarn build",
-    "posttest": "$BUNDLESIZE && bundlesize",
-    "build": "lerna run build",
-    "docs": "yarn build && for dest in popper tooltip; do jsdoc2md ./packages/$dest/dist/$dest.js > ./docs/_includes/$dest-documentation.md; done",
-    "docs:serve": "cd docs; { wait-on http://localhost:4000; open http://localhost:4000; } & jekyll serve"
+    "build": "node bundle.js",
+    "coverage": "NODE_ENV=coverage npm run test",
+    "lint": "eslint .",
+    "postpublish": "nuget-publish",
+    "prebuild": "npm run lint",
+    "prepare": "npm run build",
+    "pretest": "npm run lint",
+    "test": "popper-karma",
+    "test:dev": "BROWSERS=Chrome NODE_ENV=development npm run test"
   },
-  "lint-staged": {
-    "*.js": [
-      "prettier-eslint --write \"**/src/**/*.js\"",
-      "git add"
-    ]
-  },
-  "bundlesize": [
-    {
-      "path": "./packages/popper/dist/popper.min.js",
-      "threshold": "7 Kb"
-    },
-    {
-      "path": "./packages/tooltip/dist/tooltip.min.js",
-      "threshold": "2 Kb"
-    }
-  ]
+  "types": "index.d.ts",
+  "version": "1.11.1"
 }

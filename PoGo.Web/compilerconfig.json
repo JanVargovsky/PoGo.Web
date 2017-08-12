@@ -2,5 +2,9 @@
   {
     "outputFile": "wwwroot/css/StyleSheet.css",
     "inputFile": "wwwroot/css/StyleSheet.less"
+  },
+  {
+    "outputFile": "wwwroot/lib/popper.js/dist/popper.es5.js",
+    "inputFile": "wwwroot/lib/popper.js/dist/popper.js"
   }
 ]
