@@ -1,10 +1,8 @@
 ﻿using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Primitives;
 using Newtonsoft.Json;
 using PoGo.Web.Dto;
 using System.Collections.Generic;
 using System.IO;
-using System.Threading.Tasks;
 
 namespace PoGo.Web.Logic
 {

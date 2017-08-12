@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Razor.Internal;
+using Microsoft.AspNetCore.Razor.Language;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using PoGo.Web.Logic;
 using Microsoft.Extensions.FileProviders;
+using PoGo.Web.Logic;
 using System.IO;
-using Microsoft.AspNetCore.Razor.Language;
-using Microsoft.AspNetCore.Mvc.Razor.Internal;
 
 namespace PoGo.Web
 {

@@ -1,28 +1,36 @@
 ﻿[
   {
     "Title": "Jak mohu podpořit web?",
-    "Answer": "Na stránce nagas.cz naleznete nahoře v menu odkaz, kde můžete přispět pomocí PayPall. Jestli vám PayPall nevyhovuje, tak mě kontaktujte na Discordu a vždy se nějak domluvíme. Také ocením hash klíče a samozřejmě vlídné slovo na Discordu",
-    "Images": [ "logo.png" ]
+    "Answer": "Na stránce nagas.cz naleznete nahoře v menu odkaz, kde můžete přispět pomocí PayPal. Jestli vám PayPal nevyhovuje, tak mě kontaktujte na Discordu a vždy se nějak domluvíme. Také ocením hash klíče a samozřejmě vlídné slovo na Discordu"
   },
   {
     "Title": "Můžeš rozšířit mapu na lokaci kde nescanuješ např. jiné město?",
     "Answer": "Ano, mohu. Záleží ale na domluvě. Kontaktujte mě na Discordu"
   },
   {
-    "Title": "Kde se mohu zeptat na jakoukoliv otázku týkající se mapy?",
-    "Answer": "Chtěl bych udržet jednotný kanál komunikace, takže všechny dotazy směřujte na Discord.",
-    "Images": [
-      "maps/fm.png",
-      "maps/praha.png"
-    ]
+    "Title": "Kde se mohu zeptat na jakoukoliv otázku týkající se mapy/discordu atd.?",
+    "Answer": "Chtěl bych udržet jednotný kanál komunikace, takže všechny dotazy směřujte na Discord do diskuze. Odkaz na něj naleznete na úvodní stránce."
   },
   {
     "Title": "Jak si mohu na mapě zobrazit pouze pokémony, ktere chci?",
-    "Answer": "Na mapě v menu \"Options\" zvolte, že chcete vidět pokemony viz obrázek. Dále do seznamu \"Hide\" přidejte všechny pokémony, ktere nechcete vidět. ",
+    "Answer": "Na mapě v menu \"Options\" zvolte, že chcete vidět pokemony viz obrázek. Dále do seznamu \"Hide\" přidejte všechny pokémony, ktere nechcete vidět. Další možností je zvýraznit na mapě pokémony, které chci. Pokémoni jsou na mapě zvětšení a skáčí. Toto provedete v menu \"Notifications Settings\", kde máte několik možnosti. Můžete si zvýraznit pokémony dle čísel/názvů nebo dle vzácnosti, kde jsou na výběr možnosti ze hry, tedy utra rare, very rare atd.",
     "Images": [
-      "maps/fm.png",
-      "maps/praha.png",
-      "maps/fno.png"
+      "faq/hide.png",
+      "faq/notification.png"
+    ]
+  },
+  {
+    "Title": "Mohu se podívat na mapě na všechny úrovně raidů?",
+    "Answer": "Ano, můžete. Mapa je ze základu nastavena, aby zobrazovala raidy level 5, ale tento filtr si můžete snadno přenastavit. V menu \"Marker Settings\" si vyberte, že chcete zobrazit Raidy a poté vyberte minimalní a maximalní úroveň gymu, kterou chcete zobrazit.",
+    "Images": [
+      "faq/raidsfilter.png"
+    ]
+  },
+  {
+    "Title": "Mohu se podívat na mapě na informace o gymech? Co za pokemony je uvnitř nebo název gymu?",
+    "Answer": "V menu \"Marker Settings\" si vyberte, že chcete zobrazit \"Gyms\". Poté na mapě po najetí mýší uvidíte všechny informace o gymu. Dále si můžete nechat zobrazit Slide bar, který obsahuje detailní informace o gymu a pokémonech, kteří v něm jsou. Jsou zde vidět útoky pokémonu, jejich IV, nick jejich trenérů atd.",
+    "Images": [
+      "faq/sidebar.png"
     ]
   }
 ]
