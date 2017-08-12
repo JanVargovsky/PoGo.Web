@@ -3,20 +3,26 @@
 }
 
 footer{
-    min-height: 30px;
+    align-self: flex-end;
+    width: 100%;
 }
 
 body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 
-    main{
+    main {
+        flex: 1;
         padding-top: 10px;
         padding-bottom: 10px;
-
-        #maps{
-            padding-top: 20px;
-        }
     }
+}
 
+#myCarousel {
+    @media (max-width: 768px) {
+        display: none;
+    }
 }
 
 /* Wrapping element */

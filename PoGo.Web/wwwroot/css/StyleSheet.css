@@ -1,12 +1,21 @@
 ﻿footer {
-  min-height: 30px;
+  align-self: flex-end;
+  width: 100%;
+}
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 body main {
+  flex: 1;
   padding-top: 10px;
   padding-bottom: 10px;
 }
-body main #maps {
-  padding-top: 20px;
+@media (max-width: 768px) {
+  #myCarousel {
+    display: none;
+  }
 }
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
