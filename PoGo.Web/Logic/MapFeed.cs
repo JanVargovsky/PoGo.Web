@@ -14,20 +14,20 @@ namespace PoGo.Web.Logic
                 new MapInfo
                 {
                     City = "Praha",
-                    Image = "/images/maps/praha.png",
-                    Port = 5000,
+                    Image = "/images/maps/prague.png",
+                    URL = "http://nagas.cz:5000",
                 },
                 new MapInfo
                 {
                     City = "Frýdek - Místek",
-                    Image = "/images/maps/fm.png",
-                    Port = 5010,
+                    Image = "/images/maps/fm2.png",
+                    URL = "http://nagas.cz:5010",
                 },
                 new MapInfo
                 {
                     City = "Frýdlant nad Ostravicí",
-                    Image = "/images/maps/fno.png",
-                    Port = 666,
+                    Image = "/images/maps/fno2.png",
+                    URL = "http://nagas.cz:666",
                 }
             };
         }

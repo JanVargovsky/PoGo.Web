@@ -3,11 +3,13 @@
 <div class="row" id="maps">
     @foreach (var map in Model)
     {
-        <div class="col-md-4">
+        <div class="col-lg-4 map">
             <h2 class="text-center">@map.City</h2>
-            <a href="#">
-                <img class="img img-fluid" alt="@map.City" src="@map.Image" />
-            </a>
+            <form asp-controller="Map" asp-action="LoadMap" method="post">
+                @Html.AntiForgeryToken()
+                <input name="name" type="hidden" value="@map.City" />
+                <input name="submit" type="image" src="@map.Image" alt="Mapa @map.City" class="img-thumbnail" />
+            </form>
         </div>
     }
 </div>

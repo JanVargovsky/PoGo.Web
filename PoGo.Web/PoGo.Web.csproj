@@ -28,8 +28,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\images\" />
     <Folder Include="wwwroot\images\carousel\" />
     <Folder Include="wwwroot\images\faq\" />
+    <Folder Include="wwwroot\js\" />
   </ItemGroup>
 
 </Project>
