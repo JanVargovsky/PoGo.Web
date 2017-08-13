@@ -14,11 +14,11 @@ namespace PoGo.Web.Pages
         public MapsModel(MapFeed mapFeed)
         {
             this.mapFeed = mapFeed;
-            Maps = mapFeed.Maps;
         }
 
         public void OnGet()
         {
+            Maps = mapFeed.Maps;
         }
     }
 }

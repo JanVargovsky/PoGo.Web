@@ -8,7 +8,7 @@
             <form asp-controller="Map" asp-action="LoadMap" method="post">
                 @Html.AntiForgeryToken()
                 <input name="name" type="hidden" value="@map.City" />
-                <input name="submit" type="image" src="@map.Image" alt="Mapa @map.City" class="map-preview" />
+                <input name="submit" type="image" src="@map.Image" alt="Mapa @map.City" class="map-preview d-block" />
             </form>
         </div>
     }

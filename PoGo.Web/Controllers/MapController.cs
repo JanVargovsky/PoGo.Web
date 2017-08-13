@@ -16,7 +16,8 @@ namespace PoGo.Web.Controllers
         [HttpPost]
         public IActionResult LoadMap(string name)
         {
-            var map = mapFeed.Maps.Where(t => t.City == name).FirstOrDefault();
+            var map = mapFeed.Maps
+                .FirstOrDefault(t => t.City == name);
 
             if (map == null)
                 return Redirect("/");

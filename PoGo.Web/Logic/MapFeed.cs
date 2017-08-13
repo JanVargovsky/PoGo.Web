@@ -13,9 +13,15 @@ namespace PoGo.Web.Logic
             {
                 new MapInfo
                 {
-                    City = "Praha",
+                    City = "Praha - Pokemoni",
                     Image = "/images/maps/prague.png",
                     URL = "http://nagas.cz:5000",
+                },
+                new MapInfo
+                {
+                    City = "Praha - Raidy",
+                    Image = "/images/maps/prague-raids.png",
+                    URL = "http://nagas.cz:5001",
                 },
                 new MapInfo
                 {
