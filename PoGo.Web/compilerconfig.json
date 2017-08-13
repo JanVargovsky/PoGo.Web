@@ -4,7 +4,7 @@
     "inputFile": "wwwroot/css/StyleSheet.less"
   },
   {
-    "outputFile": "wwwroot/lib/popper.js/dist/popper.es5.js",
-    "inputFile": "wwwroot/lib/popper.js/dist/popper.js"
+    "outputFile": "wwwroot/js/site.es5.js",
+    "inputFile": "wwwroot/js/site.js"
   }
 ]
