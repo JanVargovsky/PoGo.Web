@@ -1,1 +1,1 @@
-﻿footer{align-self:flex-end;width:100%;}body{display:flex;min-height:100vh;flex-direction:column;}body main{flex:1;padding-top:10px;padding-bottom:10px;}#carousel .carousel-inner{height:500px;}@media(max-width:768px){#carousel{display:none;}}#maps .map-preview{height:250px;width:100%;}
+﻿footer{align-self:flex-end;width:100%;}body{display:flex;min-height:100vh;flex-direction:column;}body main{flex:1;padding-top:10px;padding-bottom:10px;}#carousel .carousel-inner{height:500px;}@media(max-width:768px){#carousel{display:none;}}#maps .map-preview{height:250px;}

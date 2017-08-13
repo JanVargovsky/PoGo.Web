@@ -1,0 +1,22 @@
+﻿[
+  {
+    "City": "Praha - Pokemoni",
+    "URL": "http://nagas.cz:5000",
+    "Image": "/images/maps/prague.png"
+  },
+  {
+    "City": "Praha - Raidy",
+    "URL": "http://nagas.cz:5001",
+    "Image": "/images/maps/prague-raids.png"
+  },
+  {
+    "City": "Frýdek - Místek",
+    "URL": "http://nagas.cz:5010",
+    "Image": "/images/maps/fm2.png"
+  },
+  {
+    "City": "Frýdlant nad Ostravicí",
+    "URL": "http://nagas.cz:666",
+    "Image": "/images/maps/fno2.png"
+  }
+]

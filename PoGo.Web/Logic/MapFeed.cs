@@ -1,41 +1,29 @@
-﻿using PoGo.Web.Dto;
+﻿using Microsoft.AspNetCore.Hosting;
+using Newtonsoft.Json;
+using PoGo.Web.Dto;
 using System.Collections.Generic;
+using System.IO;
 
 namespace PoGo.Web.Logic
 {
     public class MapFeed
     {
+        const string MapFileName = "Configuration/maps.json";
+        private readonly IHostingEnvironment hostingEnvironment;
+
         public IList<MapInfo> Maps { get; set; }
 
-        public MapFeed()
+        public MapFeed(IHostingEnvironment hostingEnvironment)
         {
-            Maps = new[]
-            {
-                new MapInfo
-                {
-                    City = "Praha - Pokemoni",
-                    Image = "/images/maps/prague.png",
-                    URL = "http://nagas.cz:5000",
-                },
-                new MapInfo
-                {
-                    City = "Praha - Raidy",
-                    Image = "/images/maps/prague-raids.png",
-                    URL = "http://nagas.cz:5001",
-                },
-                new MapInfo
-                {
-                    City = "Frýdek - Místek",
-                    Image = "/images/maps/fm2.png",
-                    URL = "http://nagas.cz:5010",
-                },
-                new MapInfo
-                {
-                    City = "Frýdlant nad Ostravicí",
-                    Image = "/images/maps/fno2.png",
-                    URL = "http://nagas.cz:666",
-                }
-            };
+            this.hostingEnvironment = hostingEnvironment;
+            Maps = GetMaps();
+        }
+
+        IList<MapInfo> GetMaps()
+        {
+            string mapFileName = hostingEnvironment.ContentRootFileProvider.GetFileInfo(MapFileName).PhysicalPath;
+            var content = File.ReadAllText(mapFileName);
+            return JsonConvert.DeserializeObject<IList<MapInfo>>(content);
         }
     }
 }
