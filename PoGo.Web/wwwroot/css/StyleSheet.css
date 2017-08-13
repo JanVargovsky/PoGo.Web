@@ -12,9 +12,6 @@ body main {
   padding-top: 10px;
   padding-bottom: 10px;
 }
-#carousel .carousel-inner {
-  height: 500px;
-}
 @media (max-width: 768px) {
   #carousel {
     display: none;
