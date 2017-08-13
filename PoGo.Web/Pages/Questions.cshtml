@@ -9,7 +9,7 @@
 @foreach (var question in Model.Questions)
 {
     <div class="card border-info mb-3 pb-2">
-        <h4 class="card-title p-2 bg-info">@question.Title</h4>
+        <h4 class="card-title p-2 bg-info text-white">@question.Title</h4>
         <p class="card-text px-2 m-0">@question.Answer</p>
         @if (question.Images?.Any() == true)
         {
