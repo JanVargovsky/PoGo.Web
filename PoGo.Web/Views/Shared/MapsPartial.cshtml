@@ -1,14 +1,14 @@
 ﻿@model IList<PoGo.Web.Dto.MapInfo>
 
-<div class="row" id="maps">
+<div id="maps" class="card-deck">
     @foreach (var map in Model)
     {
-        <div class="col-lg-4 map">
-            <h2 class="text-center">@map.City</h2>
+        <div class="card">
+            <h3 class="card-header text-center">@map.City</h3>
             <form asp-controller="Map" asp-action="LoadMap" method="post">
                 @Html.AntiForgeryToken()
                 <input name="name" type="hidden" value="@map.City" />
-                <input name="submit" type="image" src="@map.Image" alt="Mapa @map.City" class="img-thumbnail" />
+                <input name="submit" type="image" src="@map.Image" alt="Mapa @map.City" class="map-preview" />
             </form>
         </div>
     }

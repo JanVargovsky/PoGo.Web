@@ -1,41 +1,43 @@
-﻿<nav class="navbar navbar-expand-md sticky-top navbar-dark bg-dark">
-    <div class="container">
-        <a asp-page="/Index" class="navbar-brand"><img src="~/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="nagas.cz logo"> Nagas.cz</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mr-auto">
-                @*<li class="nav-item">
-                        <a class="nav-link" href="https://discord.gg/pbZgX97" target="_blank">
-                            <span class="socicon-discord"></span> Discord - hlášení pokémonů
-                        </a>
-                    </li>*@
-                <li class="nav-item">
-                    <a asp-page="/Maps" class="nav-link"><i class="fa fa-map" aria-hidden="true"></i> Mapy</a>
-                </li>
-                <li class="nav-item">
-                    <a asp-page="/Questions" class="nav-link"><i class="fa fa-question-circle" aria-hidden="true"></i> FAQ</a>
-                </li>
-                @*<li class="nav-item">
-                        <a class="nav-link" href="https://www.paypal.me/nagaspogo" target="_blank">
-                            <i class="fa fa-eur" aria-hidden="true"></i> Podporte web
-                        </a>
-                    </li>*@
-                <li class="nav-item">
-                    <a class="nav-link" asp-page="/AboutProject"><i class="fa fa-comment" aria-hidden="true"></i> O projektu</a>
-                </li>
-            </ul>
+﻿<header>
+    <nav class="navbar navbar-expand-md sticky-top navbar-dark bg-dark">
+        <div class="container">
+            <a asp-page="/Index" class="navbar-brand"><img src="~/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="nagas.cz logo"> Nagas.cz</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    @*<li class="nav-item">
+                            <a class="nav-link" href="https://discord.gg/pbZgX97" target="_blank">
+                                <span class="socicon-discord"></span> Discord - hlášení pokémonů
+                            </a>
+                        </li>*@
+                    <li class="nav-item">
+                        <a asp-page="/Maps" class="nav-link"><i class="fa fa-map" aria-hidden="true"></i> Mapy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-page="/Questions" class="nav-link"><i class="fa fa-question-circle" aria-hidden="true"></i> FAQ</a>
+                    </li>
+                    @*<li class="nav-item">
+                            <a class="nav-link" href="https://www.paypal.me/nagaspogo" target="_blank">
+                                <i class="fa fa-eur" aria-hidden="true"></i> Podporte web
+                            </a>
+                        </li>*@
+                    <li class="nav-item">
+                        <a class="nav-link" asp-page="/AboutProject"><i class="fa fa-comment" aria-hidden="true"></i> O projektu</a>
+                    </li>
+                </ul>
 
-            <div class="my-2 my-lg-0">
-                <a class="btn btn-primary" href="https://discord.gg/pbZgX97" target="_blank" role="button"
-                   data-toggle="tooltip" data-placement="top" title="Hlášení pokémonů a raidů">
-                    <span class="socicon-discord"></span> Discord
-                </a>
-                <a class="btn btn-success" href="https://www.paypal.me/nagaspogo" target="_blank" role="button">
-                    <i class="fa fa-eur" aria-hidden="true"></i> Podporte web
-                </a>
+                <div class="my-2 my-lg-0">
+                    <a class="btn btn-primary" href="https://discord.gg/pbZgX97" target="_blank" role="button"
+                       data-toggle="tooltip" data-placement="top" title="Hlášení pokémonů a raidů">
+                        <span class="socicon-discord"></span> Discord
+                    </a>
+                    <a class="btn btn-success" href="https://www.paypal.me/nagaspogo" target="_blank" role="button">
+                        <i class="fa fa-eur" aria-hidden="true"></i> Podporte web
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
+</header>

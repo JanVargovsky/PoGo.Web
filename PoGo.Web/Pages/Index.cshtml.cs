@@ -2,6 +2,7 @@
 using PoGo.Web.Dto;
 using PoGo.Web.Logic;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace PoGo.Web.Pages
 {
@@ -21,7 +22,9 @@ namespace PoGo.Web.Pages
 
         public void OnGet()
         {
-            Images = carouselFeed.Images;
+            Images = carouselFeed.Images
+                .Take(3)
+                .ToList();
             Maps = mapFeed.Maps;
         }
     }
