@@ -22,10 +22,10 @@ namespace PoGo.Web.Pages
 
         public void OnGet()
         {
-            Images = carouselFeed.Images
+            Images = carouselFeed.Images;
+            Maps = mapFeed.Maps
                 .Take(3)
                 .ToList();
-            Maps = mapFeed.Maps;
         }
     }
 }
