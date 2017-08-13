@@ -36,6 +36,7 @@ namespace PoGo.Web.Logic
         IList<string> GetImagePaths()
         {
             return hostingEnvironment.WebRootFileProvider.GetDirectoryContents(SubPath)
+                .OrderBy(t => t.Name)
                 .Select(t => Path.Combine(SubPath, t.Name))
                 .ToList();
         }
