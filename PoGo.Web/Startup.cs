@@ -52,6 +52,7 @@ namespace PoGo.Web
             else
             {
                 app.UseExceptionHandler("/Error");
+                loggerFactory.AddFile("Logs/log-{Date}.txt");
             }
 
             app.UseStaticFiles();
