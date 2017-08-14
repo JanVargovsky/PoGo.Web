@@ -1,9 +1,26 @@
 ﻿<!DOCTYPE html>
 <html>
 <head lang="cs">
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Nagas.cz - @ViewData["Title"]</title>
+    @{
+        string title = "Nagas.cz - " + ViewData["Title"];
+        string description = "Pokemon Go mapy pokemonu a raidů pro Českou Republiku.";
+        string url = "https://nagas.cz";
+        string metaTitle = "Nagas.cz";
+    }
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>@title</title>
+    <meta name="description" content="@description" />
+
+    <meta property="og:site_name" content="Nagas.cz" />
+    <meta property="og:url" content="@url" />
+    <meta property="og:title" content="@metaTitle" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="@description" />
+    <meta property="og:image" content="@url/images/rocket-120.png" />
+
+    <meta name="twitter:site" content="Nagas.cz" />
+    <meta name="twitter:creator" content="@@janvargovsky" />
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />

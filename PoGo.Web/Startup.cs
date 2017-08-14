@@ -36,6 +36,9 @@ namespace PoGo.Web
                 return new FileProviderRazorProject(s.GetRequiredService<IRazorViewEngineFileProviderAccessor>());
             });
 
+            // https://github.com/aspnet/Hosting/issues/793
+            //services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
             services.AddSingleton<CarouselFeed>();
             services.AddSingleton<FAQFeed>();
             services.AddSingleton<MapFeed>();
