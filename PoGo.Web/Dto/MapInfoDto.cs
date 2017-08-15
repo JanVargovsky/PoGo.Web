@@ -1,6 +1,6 @@
 ﻿namespace PoGo.Web.Dto
 {
-    public class MapInfo
+    public class MapInfoDto
     {
         public string City { get; set; }
         public string URL { get; set; }

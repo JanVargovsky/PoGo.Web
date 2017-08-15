@@ -14,7 +14,7 @@ namespace PoGo.Web.Logic
         private readonly IHostingEnvironment hostingEnvironment;
         private readonly ILogger<FAQFeed> logger;
 
-        public IList<Question> Questions { get; set; }
+        public IList<QuestionDto> Questions { get; set; }
 
         public FAQFeed(IHostingEnvironment hostingEnvironment, ILogger<FAQFeed> logger)
         {
@@ -35,15 +35,15 @@ namespace PoGo.Web.Logic
              }, null);
         }
 
-        IList<Question> GetQuestions()
+        IList<QuestionDto> GetQuestions()
         {
             string faqFileName = hostingEnvironment.ContentRootFileProvider.GetFileInfo(FAQFileName).PhysicalPath;
             var content = File.ReadAllText(faqFileName);
-            return JsonConvert.DeserializeObject<IList<Question>>(content);
+            return JsonConvert.DeserializeObject<IList<QuestionDto>>(content);
         }
 
-        IEnumerable<Question> LoadDummyQuestions() =>
+        IEnumerable<QuestionDto> LoadDummyQuestions() =>
             Enumerable.Range(0, 10)
-            .Select(i => new Question { Title = $"Stupid question#{i}", Answer = $"Answer#{i}" });
+            .Select(i => new QuestionDto { Title = $"Stupid question#{i}", Answer = $"Answer#{i}" });
     }
 }

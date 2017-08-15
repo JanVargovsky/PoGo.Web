@@ -9,7 +9,7 @@ namespace PoGo.Web.Pages
     {
         private readonly FAQFeed faqFeed;
 
-        public IEnumerable<Question> Questions { get; set; }
+        public IEnumerable<QuestionDto> Questions { get; set; }
 
         public QuestionsModel(FAQFeed faqFeed)
         {

@@ -9,7 +9,7 @@ namespace PoGo.Web.Pages
     {
         private readonly MapFeed mapFeed;
 
-        public IList<MapInfo> Maps { get; set; }
+        public IList<MapInfoDto> Maps { get; set; }
 
         public MapsModel(MapFeed mapFeed)
         {

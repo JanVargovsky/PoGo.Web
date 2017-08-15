@@ -7,22 +7,15 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mr-auto">
-                    @*<li class="nav-item">
-                            <a class="nav-link" href="https://discord.gg/pbZgX97" target="_blank">
-                                <span class="socicon-discord"></span> Discord - hlášení pokémonů
-                            </a>
-                        </li>*@
                     <li class="nav-item">
                         <a asp-page="/Maps" class="nav-link"><i class="fa fa-map" aria-hidden="true"></i> Mapy</a>
                     </li>
                     <li class="nav-item">
+                        <a asp-page="/LinkShare" class="nav-link"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Užitečné odkazy</a>
+                    </li>
+                    <li class="nav-item">
                         <a asp-page="/Questions" class="nav-link"><i class="fa fa-question-circle" aria-hidden="true"></i> FAQ</a>
                     </li>
-                    @*<li class="nav-item">
-                            <a class="nav-link" href="https://www.paypal.me/nagaspogo" target="_blank">
-                                <i class="fa fa-eur" aria-hidden="true"></i> Podporte web
-                            </a>
-                        </li>*@
                     <li class="nav-item">
                         <a class="nav-link" asp-page="/AboutProject"><i class="fa fa-comment" aria-hidden="true"></i> O projektu</a>
                     </li>
@@ -38,10 +31,6 @@
                     </li>
                 </ul>
                 <div class="my-2 my-lg-0">
-                    @*<a class="btn btn-primary" href="https://discord.gg/pbZgX97" target="_blank" role="button"
-                       data-toggle="tooltip" data-placement="top" title="Hlášení pokémonů a raidů">
-                        <span class="socicon-discord"></span> Discord
-                    </a>*@
                     <a class="btn btn-success" href="https://www.paypal.me/nagaspogo" target="_blank" role="button">
                         <i class="fa fa-eur" aria-hidden="true"></i> Podpořte web
                     </a>

@@ -11,7 +11,7 @@ namespace PoGo.Web.Logic
         const string MapFileName = "Configuration/maps.json";
         private readonly IHostingEnvironment hostingEnvironment;
 
-        public IList<MapInfo> Maps { get; set; }
+        public IList<MapInfoDto> Maps { get; set; }
 
         public MapFeed(IHostingEnvironment hostingEnvironment)
         {
@@ -19,11 +19,11 @@ namespace PoGo.Web.Logic
             Maps = GetMaps();
         }
 
-        IList<MapInfo> GetMaps()
+        IList<MapInfoDto> GetMaps()
         {
             string mapFileName = hostingEnvironment.ContentRootFileProvider.GetFileInfo(MapFileName).PhysicalPath;
             var content = File.ReadAllText(mapFileName);
-            return JsonConvert.DeserializeObject<IList<MapInfo>>(content);
+            return JsonConvert.DeserializeObject<IList<MapInfoDto>>(content);
         }
     }
 }

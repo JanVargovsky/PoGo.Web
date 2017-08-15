@@ -1,6 +1,8 @@
 ﻿$(function () {
     $('[data-toggle="tooltip"]').tooltip()
 
-    if (typeof window.google_jobrunner === 'undefined')
-        $("#adblockAlert").removeAttr("hidden")
+    setTimeout(() => {
+        if (typeof window.google_jobrunner === 'undefined')
+            $("#adblockAlert").removeAttr("hidden")
+    }, 2000)
 })

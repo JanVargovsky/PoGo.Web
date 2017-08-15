@@ -12,7 +12,7 @@ namespace PoGo.Web.Pages
         private readonly MapFeed mapFeed;
 
         public IList<string> Images { get; set; }
-        public IEnumerable<MapInfo> Maps { get; set; }
+        public IEnumerable<MapInfoDto> Maps { get; set; }
 
         public IndexModel(CarouselFeed carouselFeed, MapFeed mapFeed)
         {
