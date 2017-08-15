@@ -2,7 +2,7 @@
   "version": "1.0.0",
   "name": "pogo.web",
   "private": true,
-  "devDependencies": {
+  "dependencies": {
     "bootstrap": "v4.0.0-beta",
     "popper.js": "1.11.1",
     "jquery": "2.2.0",
