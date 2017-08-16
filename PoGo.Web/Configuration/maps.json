@@ -6,7 +6,7 @@
   },
   {
     "City": "Praha - Raidy",
-    "URL": "http://nagas.cz:5001",
+    "URL": "http://nagas.cz:60001",
     "Image": "/images/maps/prague-raids.png"
   },
   {
@@ -18,5 +18,10 @@
     "City": "Frýdlant nad Ostravicí",
     "URL": "http://nagas.cz:666",
     "Image": "/images/maps/fno2.png"
+  },
+  {
+    "City": "Mladá Boleslav",
+    "URL": "http://nagas.cz:5015",
+    "Image": "/images/maps/mb.png"
   }
 ]

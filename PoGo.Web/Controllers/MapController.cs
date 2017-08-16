@@ -19,6 +19,8 @@ namespace PoGo.Web.Controllers
             var map = mapFeed.Maps
                 .FirstOrDefault(t => t.City == name);
 
+            //return View("MapInIframe", map);
+
             if (map == null)
                 return Redirect("/");
             else
