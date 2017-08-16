@@ -60,6 +60,7 @@ namespace PoGo.Web
             }
 
             app.UseStaticFiles();
+            app.UseStatusCodePagesWithReExecute("/Error/{0}");
 
             app.UseMvc(routes =>
             {
