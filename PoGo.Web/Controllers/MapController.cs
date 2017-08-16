@@ -16,15 +16,12 @@ namespace PoGo.Web.Controllers
         [HttpPost]
         public IActionResult LoadMap(string name)
         {
-            var map = mapFeed.Maps
-                .FirstOrDefault(t => t.City == name);
-
             //return View("MapInIframe", map);
 
-            if (map == null)
-                return Redirect("/");
-            else
+            if (mapFeed.CityToMapDictionary.TryGetValue(name, out var map))
                 return Redirect(map.URL);
+            else
+                return Redirect("/");
         }
     }
 }

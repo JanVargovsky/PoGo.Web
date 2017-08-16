@@ -21,7 +21,7 @@ namespace PoGo.Web.Logic
             this.hostingEnvironment = hostingEnvironment;
             this.logger = logger;
             Questions = GetQuestions();
-            RegisterRefresh();
+            //RegisterRefresh();
         }
 
         void RegisterRefresh()

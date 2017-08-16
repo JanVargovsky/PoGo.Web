@@ -13,13 +13,14 @@ namespace PoGo.Web.Logic
         private readonly ILogger<CarouselFeed> logger;
 
         public IList<string> Images { get; set; }
+        FileSystemWatcher fileSystemWatcher;
 
         public CarouselFeed(IHostingEnvironment hostingEnvironment, ILogger<CarouselFeed> logger)
         {
             this.hostingEnvironment = hostingEnvironment;
             this.logger = logger;
             Images = GetImagePaths();
-            RegisterRefresh();
+            //RegisterRefresh();
         }
 
         void RegisterRefresh()
