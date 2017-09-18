@@ -15,10 +15,29 @@
 </div>
 
 <p>
-    <a href="https://www.paypal.me/nagaspogo" target="_blank" role="link">
+    <a href="https://www.paypal.me/nagaspogo" target="_blank" role="link"
+       data-toggle="tooltip" data-placement="top" title="Přispějte pomocí PayPal">
         <img src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/silver-rect-paypal-34px.png" alt="PayPal">
     </a>
 </p>
 
 <h3>Účet</h3>
 <p>1024315458/6100</p>
+
+<h3>QR platby</h3>
+@{
+    var donationPrices = new[] { 100, 200, 500 };
+}
+<div class="row">
+    @foreach (var price in donationPrices)
+    {
+        <div class="col-12 col-md-4">
+            <figure class="figure">
+                <img class="figure-img img-fluid rounded" src="@Url.Content($"~/images/QR/QR{price}.png")" alt="Platba @price" />
+                <figcaption class="text-center">
+                    <span class="h5">Platba @price</span>
+                </figcaption>
+            </figure>
+        </div>
+    }
+</div>
