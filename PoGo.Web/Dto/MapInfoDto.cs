@@ -5,5 +5,6 @@
         public string City { get; set; }
         public string URL { get; set; }
         public string Image { get; set; }
+        public bool NeedsRegistration { get; set; }
     }
 }
