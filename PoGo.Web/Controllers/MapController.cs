@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using PoGo.Web.Logic;
-using PoGo.Web.Models.MapModels;
+using PoGo.Web.Models.Map;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;

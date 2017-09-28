@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace PoGo.Web.Models.MapModels
+namespace PoGo.Web.Models.Map
 {
     public class MapRegistrationModel
     {
