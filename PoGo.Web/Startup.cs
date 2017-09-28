@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Razor.Internal;
 using Microsoft.AspNetCore.Razor.Language;
+using Microsoft.AspNetCore.Rewrite;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
@@ -24,6 +26,7 @@ namespace PoGo.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            //services.Configure<MvcOptions>(options => options.Filters.Add(new RequireHttpsAttribute()));
 
             services.AddLogging();
 
@@ -49,6 +52,10 @@ namespace PoGo.Web
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            //var options = new RewriteOptions()
+            //    .AddRedirectToHttps();
+            //app.UseRewriter(options);
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

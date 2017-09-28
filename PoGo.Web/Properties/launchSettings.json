@@ -2,9 +2,13 @@
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
-    "iisExpress": {
-      "applicationUrl": "http://localhost:37293/",
+    "iis": {
+      "applicationUrl": "http://localhost/PoGo.Web",
       "sslPort": 0
+    },
+    "iisExpress": {
+      "applicationUrl": "https://localhost:44387/",
+      "sslPort": 44387
     }
   },
   "profiles": {
@@ -16,7 +20,7 @@
       }
     },
     "PoGo.Web": {
-      "commandName": "Project",
+      "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
