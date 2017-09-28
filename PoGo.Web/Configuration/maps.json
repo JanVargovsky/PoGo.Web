@@ -1,27 +1,39 @@
 ﻿[
   {
-    "City": "Praha - Pokemoni",
-    "URL": "http://nagas.cz:60002",
-    "Image": "/images/maps/prague.png"
+    "City": "Praha",
+    "URL": "https://praha.nagas.cz",
+    "Image": "/images/maps/praha.png"
   },
   {
-    "City": "Praha - Raidy",
-    "URL": "http://nagas.cz:60001",
-    "Image": "/images/maps/prague-raids.png"
-  },
-  {
-    "City": "Frýdek - Místek",
-    "URL": "https://fm.nagas.cz/",
-    "Image": "/images/maps/fm2.png"
-  },
-  {
-    "City": "Frýdlant nad Ostravicí",
-    "URL": "https://fno.nagas.cz/",
-    "Image": "/images/maps/fno2.png"
+    "City": "Ustí nad Labem",
+    "URL": "https://unl.nagas.cz/",
+    "Image": "/images/maps/jc.png",
+    "NeedsRegistration": true
   },
   {
     "City": "Mladá Boleslav",
     "URL": "https://mb.nagas.cz/",
-    "Image": "/images/maps/mb.png"
+    "Image": "/images/maps/jc.png"
+  },
+  {
+    "City": "Jičín",
+    "URL": "https://jc.nagas.cz/",
+    "Image": "/images/maps/jc.png"
+  },
+  {
+    "City": "Frýdek - Místek",
+    "URL": "https://fm.nagas.cz/",
+    "Image": "/images/maps/jc.png",
+    "NeedsRegistration": true
+  },
+  {
+    "City": "Frýdlant nad Ostravicí",
+    "URL": "https://fno.nagas.cz/",
+    "Image": "/images/maps/jc.png"
+  },
+  {
+    "City": "Lomnice nad Popelkou",
+    "URL": "https://lc.nagas.cz/",
+    "Image": "/images/maps/jc.png"
   }
 ]
