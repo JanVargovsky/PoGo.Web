@@ -10,7 +10,6 @@ using Microsoft.Extensions.Logging;
 using PoGo.Web.Identity;
 using PoGo.Web.Logic;
 using PoGo.Web.Models;
-using System;
 using System.IO;
 
 namespace PoGo.Web
@@ -30,13 +29,22 @@ namespace PoGo.Web
             services.AddIdentity<ApplicationUser, IdentityRole>();
 
             services.AddScoped<ExternalSignInManager<ApplicationUser>>();
-
             services.AddAuthentication()
                 .AddGoogle(googleOptions =>
                 {
-                    //googleOptions.CallbackPath = $"/Account/{nameof(Controllers.AccountController.ExternalLoginCallback)}";
                     googleOptions.ClientId = Configuration["Authentication:Google:ClientId"];
                     googleOptions.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
+                })
+                .AddDiscord(discordOptions =>
+                {
+                    discordOptions.AppId = Configuration["Authentication:Discord:AppId"];
+                    discordOptions.AppSecret = Configuration["Authentication:Discord:AppSecret"];
+                    //discordOptions.Scope.Add("guilds");
+                })
+                .AddFacebook(facebookOptions =>
+                {
+                    facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
+                    facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
                 });
 
             services.AddMvc();
