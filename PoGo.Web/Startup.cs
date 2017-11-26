@@ -1,12 +1,15 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Razor.Internal;
 using Microsoft.AspNetCore.Razor.Language;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Logging;
+using PoGo.Web.Identity;
 using PoGo.Web.Logic;
+using PoGo.Web.Models;
 using System.IO;
 
 namespace PoGo.Web
@@ -23,7 +26,29 @@ namespace PoGo.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddIdentity<ApplicationUser, IdentityRole>();
+
+            services.AddScoped<ExternalSignInManager<ApplicationUser>>();
+            services.AddAuthentication()
+                .AddGoogle(googleOptions =>
+                {
+                    googleOptions.ClientId = Configuration["Authentication:Google:ClientId"];
+                    googleOptions.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
+                })
+                .AddDiscord(discordOptions =>
+                {
+                    discordOptions.AppId = Configuration["Authentication:Discord:AppId"];
+                    discordOptions.AppSecret = Configuration["Authentication:Discord:AppSecret"];
+                    //discordOptions.Scope.Add("guilds");
+                })
+                .AddFacebook(facebookOptions =>
+                {
+                    facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
+                    facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
+                });
+
             services.AddMvc();
+            //services.Configure<MvcOptions>(options => options.Filters.Add(new RequireHttpsAttribute()));
 
             services.AddLogging();
 
@@ -49,6 +74,10 @@ namespace PoGo.Web
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            //var options = new RewriteOptions()
+            //    .AddRedirectToHttps();
+            //app.UseRewriter(options);
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -61,6 +90,7 @@ namespace PoGo.Web
             }
 
             app.UseStaticFiles();
+            app.UseAuthentication();
             app.UseStatusCodePagesWithReExecute("/Error/{0}");
 
             app.UseMvc(routes =>
