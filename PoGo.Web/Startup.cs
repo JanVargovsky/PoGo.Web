@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Authentication.OAuth;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Razor.Internal;
@@ -11,6 +12,7 @@ using PoGo.Web.Identity;
 using PoGo.Web.Logic;
 using PoGo.Web.Models;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace PoGo.Web
 {
@@ -29,22 +31,34 @@ namespace PoGo.Web
             services.AddIdentity<ApplicationUser, IdentityRole>();
 
             services.AddScoped<ExternalSignInManager<ApplicationUser>>();
+            var authEvents = new OAuthEvents
+            {
+                OnRemoteFailure = ctx =>
+                {
+                    ctx.Response.Redirect("/Error");
+                    ctx.HandleResponse();
+                    return Task.CompletedTask;
+                }
+            };
             services.AddAuthentication()
                 .AddGoogle(googleOptions =>
                 {
                     googleOptions.ClientId = Configuration["Authentication:Google:ClientId"];
                     googleOptions.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
+                    googleOptions.Events = authEvents;
                 })
                 .AddDiscord(discordOptions =>
                 {
                     discordOptions.AppId = Configuration["Authentication:Discord:AppId"];
                     discordOptions.AppSecret = Configuration["Authentication:Discord:AppSecret"];
+                    discordOptions.Events = authEvents;
                     //discordOptions.Scope.Add("guilds");
                 })
                 .AddFacebook(facebookOptions =>
                 {
                     facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
                     facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
+                    facebookOptions.Events = authEvents;
                 });
 
             services.AddMvc();

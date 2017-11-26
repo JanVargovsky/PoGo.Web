@@ -39,11 +39,11 @@
                 <div class="my-2 my-lg-0">
                     @if(User.Identity.IsAuthenticated)
                     {
-
+                        //User.Identity.Name
                     }
-                    <a asp-controller="Account" asp-action="Login" class="btn btn-primary" role="button">
+                    @*<a asp-controller="Account" asp-action="Login" class="btn btn-primary" role="button">
                         <i class="fa fa-" aria-hidden="true"></i> Přihlášení (DEV)
-                    </a>
+                    </a>*@
                     <a asp-controller="Map" asp-action="Register" class="btn btn-primary" role="button">
                         <i class="fa fa-user-plus" aria-hidden="true"></i> Registrace
                     </a>
